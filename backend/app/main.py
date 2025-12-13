@@ -1,11 +1,14 @@
 from fastapi import FastAPI
+from .database import engine
+from .models import Base
 
 app = FastAPI(
     title="Vendors API",
-    description="Backend API for Vendors page assessment",
     version="1.0.0",
 )
 
+Base.metadata.create_all(bind=engine)
+
 @app.get("/health")
-def health_check():
+def health():
     return {"status": "ok"}
