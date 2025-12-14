@@ -191,12 +191,12 @@ Created a seed script that generates 30+ diverse vendors with:
 
 | Phase | Status | Time Estimate |
 |-------|--------|---------------|
-| Phase 1 – Schema Design | ✅ Complete | 1 hour |
-| Phase 2 – Backend API | ✅ Complete | 2 hours |
-| Phase 3 – Database Seeding | ✅ Complete | 1 hour |
+| Phase 1 – Schema Design | ✅ Complete | .5 hour |
+| Phase 2 – Backend API | ✅ Complete | 1 hours |
+| Phase 3 – Database Seeding | ✅ Complete | .5 hour |
 | Phase 4 – Frontend Setup | ✅ Complete | 1 hour |
-| Phase 5 – UI Components | ✅ Complete | 4 hours |
-| Phase 6 – Integration | ✅ Complete | 2 hours |
-| Phase 7 – Documentation | ✅ Complete | 1 hour |
+| Phase 5 – UI Components | ✅ Complete | 2 hours |
+| Phase 6 – Integration | ✅ Complete | 1 hours |
+| Phase 7 – Documentation | ✅ Complete | .5 hour |
 
-**Total Estimated Time: ~12 hours**
+**Total Estimated Time: ~6 hours**
