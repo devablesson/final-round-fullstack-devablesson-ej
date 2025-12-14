@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.database import SessionLocal
+from app.database import SessionLocal, engine, Base
 from app.models import Vendor
 
 
@@ -137,6 +137,9 @@ def seed_vendors() -> None:
     """
     Main seeding function.
     """
+    # Create all tables if they don't exist
+    Base.metadata.create_all(bind=engine)
+    
     db: Session = SessionLocal()
 
     try:
