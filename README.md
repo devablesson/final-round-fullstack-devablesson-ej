@@ -39,7 +39,7 @@ This project implements the core functionality of Ramp's Vendors page as specifi
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | **Backend** | FastAPI (Python 3.11+) | RESTful API with automatic OpenAPI documentation |
-| **Database** | PostgreSQL + SQLAlchemy | Persistent data storage with ORM |
+| **Database** | PostgreSQL (Neon) + SQLAlchemy | Cloud-hosted PostgreSQL with ORM |
 | **Frontend** | React 18 + TypeScript | Component-based UI with type safety |
 | **Styling** | TailwindCSS | Utility-first CSS framework |
 | **Build Tool** | Vite | Fast development server and optimized builds |
@@ -102,7 +102,8 @@ Ensure you have the following installed:
 
 - **Python 3.11+** — [Download](https://www.python.org/downloads/)
 - **Node.js 18+** — [Download](https://nodejs.org/)
-- **PostgreSQL 15+** — [Download](https://www.postgresql.org/download/)
+
+> **Note:** No local PostgreSQL installation required! The database is hosted on [Neon](https://neon.tech) (cloud PostgreSQL).
 
 ### 1. Clone the Repository
 
@@ -111,33 +112,7 @@ git clone git@github.com:devablesson/final-round-fullstack-devablesson-ej.git
 cd final-round-fullstack-devablesson-ej
 ```
 
-### 2. Database Setup (Required)
-
-> **Important:** PostgreSQL must be installed and running before proceeding.
-
-Create a PostgreSQL database by running the following in your PostgreSQL client (psql, pgAdmin, or DBeaver):
-
-```sql
-CREATE DATABASE vendors_db;
-```
-
-**Quick setup via command line:**
-```bash
-# Using psql (replace 'postgres' with your PostgreSQL username if different)
-psql -U postgres -c "CREATE DATABASE vendors_db;"
-```
-
-<details>
-<summary> Troubleshooting PostgreSQL Issues</summary>
-
-- **"connection refused"** — Ensure PostgreSQL service is running
-- **"authentication failed"** — Check your username/password in the .env file
-- **"database does not exist"** — Run the CREATE DATABASE command above first
-- **Default PostgreSQL port:** 5432
-
-</details>
-
-### 3. Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd backend
@@ -157,10 +132,8 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Create .env file with your database credentials
-echo "DATABASE_URL=postgresql://postgres:YOURPASSWORD@localhost:5432/vendors_db" > .env
-
-# Seed the database with sample vendors (30+ records)
+# Seed the database with sample vendors (one-time, 30+ records)
+# Safe to re-run - skips if data already exists
 python -m app.seed
 
 # Start the backend server
@@ -171,7 +144,7 @@ The API will be available at: **http://localhost:8000**
 
 Interactive API docs: **http://localhost:8000/docs**
 
-### 4. Frontend Setup
+### 3. Frontend Setup
 
 Open a new terminal:
 
