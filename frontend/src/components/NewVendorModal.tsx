@@ -128,31 +128,31 @@ export default function NewVendorModal({
       >
         <form onSubmit={handleSubmit} className="flex h-full flex-col">
           {/* Header */}
-          <div className="px-10 pt-8 pb-6 border-b border-gray-100">
+          <div className="px-10 pt-8 pb-8 border-b border-gray-100 text-center">
             <button
               type="button"
               onClick={handleClose}
-              className="mb-6 text-sm text-gray-500 hover:text-gray-800 transition-colors"
+              className="mb-6 text-sm text-gray-500 hover:text-gray-800 transition-colors absolute left-10"
             >
               ← Back
             </button>
 
-            <h1 className="text-[32px] font-semibold tracking-tight text-gray-900">
+            <h1 className="text-[32px] font-semibold tracking-tight text-gray-900 mt-8">
               New vendor
             </h1>
           </div>
 
           {/* Content */}
-          <div className="flex-1 overflow-y-auto px-10 pb-24 pt-10 space-y-14">
+          <div className="flex-1 overflow-y-auto px-10 pb-24 pt-10 space-y-14 flex flex-col items-center">
             {error && (
-              <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-sm">
+              <div className="w-full max-w-md rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-sm text-center">
                 {error}
               </div>
             )}
 
             {/* Vendor name */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">
+            <div className="space-y-3 w-full max-w-md text-center">
+              <label className="text-sm font-medium text-gray-700 block">
                 Vendor name <span className="text-red-500">*</span>
               </label>
               <div className="rounded-lg border border-gray-300 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
@@ -160,43 +160,43 @@ export default function NewVendorModal({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter vendor name"
-                  className="w-full text-base text-gray-900 placeholder-gray-400 focus:outline-none"
+                  className="w-full text-base text-gray-900 placeholder-gray-400 focus:outline-none text-center"
                 />
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-500 text-center">
                 This is the name that will appear across Ramp
               </p>
             </div>
 
             {/* Category */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">Category</label>
+            <div className="space-y-3 w-full max-w-md text-center">
+              <label className="text-sm font-medium text-gray-700 block">Category</label>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
                 <input
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   placeholder="e.g., SaaS / Software"
-                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none"
+                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none text-center"
                 />
               </div>
             </div>
 
             {/* Department */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">Department</label>
+            <div className="space-y-3 w-full max-w-md text-center">
+              <label className="text-sm font-medium text-gray-700 block">Department</label>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
                 <input
                   value={department}
                   onChange={(e) => setDepartment(e.target.value)}
                   placeholder="e.g., Engineering"
-                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none"
+                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none text-center"
                 />
               </div>
             </div>
 
             {/* Location */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">
+            <div className="space-y-3 w-full max-w-md text-center">
+              <label className="text-sm font-medium text-gray-700 block">
                 Vendor owner location
               </label>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
@@ -204,23 +204,23 @@ export default function NewVendorModal({
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="e.g., Boston, San Francisco"
-                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none"
+                  className="w-full text-[15px] text-gray-900 placeholder-gray-400 focus:outline-none text-center"
                 />
               </div>
             </div>
 
             {/* Payment method */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">
+            <div className="space-y-3 w-full max-w-md text-center">
+              <label className="text-sm font-medium text-gray-700 block">
                 Payment method
               </label>
-              <div className="relative rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 w-1/2">
+              <div className="relative rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all duration-200 hover:border-blue-400 hover:shadow-md focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 mx-auto w-full">
                 <select
                   value={paymentType}
                   onChange={(e) =>
                     setPaymentType(e.target.value as "Card" | "ACH")
                   }
-                  className="w-full appearance-none bg-transparent pr-8 text-[15px] text-gray-900 focus:outline-none cursor-pointer py-1"
+                  className="w-full appearance-none bg-transparent pr-8 text-[15px] text-gray-900 focus:outline-none cursor-pointer py-1 text-center"
                 >
                   <option value="ACH">ACH (Bank Transfer)</option>
                   <option value="Card"> Card</option>

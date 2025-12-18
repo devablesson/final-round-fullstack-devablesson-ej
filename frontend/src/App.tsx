@@ -76,9 +76,9 @@ export default function App() {
           {/* New vendor button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center rounded-[4px] bg-[#E6FF00] px-4 py-2 text-[14px] font-semibold text-[#1a1a1a] border border-[#D4FF00] transition-colors hover:bg-[#c5ef00] hover:border-[#c5ef00] active:bg-[#b8e000]"
+            className="btn-new-vendor inline-flex items-center justify-center"
           >
-            New vendor
+            <span className="btn-text-underline">New vendor</span>
           </button>
         </div>
 
